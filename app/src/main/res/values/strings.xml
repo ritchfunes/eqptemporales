@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">My AppTest</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="docoperacion">Permiso de operacion</string>
+    <string name="fecoperacion">Vence Permiso operacion</string>
+    <string name="docrevision">Boleta de revision</string>
+    <string name="fecrevision">Vence Boleta de revision</string>
+    <string name="doclicencia">Licencia de conducir</string>
+    <string name="doc">Documentos</string>
+    <string name="equi">Equipos</string>
+    <string name="estgen">Estado General</string>
+    <string name="extintor">Extintor</string>
+    <string name="fecextintor">Vence Extintor</string>
+    <string name="canextintor">Cantidad Extintor</string>
+    <string name="pala">Pala</string>
+    <string name="absorvente">Absorvente</string>
+    <string name="tacos">Tacos</string>
+    <string name="cunia">Cuñas</string>
+    <string name="martillo">martillo</string>
+    <string name="Jabonepoxy">jabon epoxy</string>
+    <string name="botiquin">Botiquin</string>
+    <string name="cuniaseguridad">Cuñas de seguridad(4)</string>
+    <string name="foco">Foco (antiexplosivo)</string>
+
+    <string name="estadogeneral">Estado General</string>
+    <string name="llantas">llantas (grabado minimo 3mm)-Tuerca-Esparragos</string>
+    <string name="Luces">Luces (freno, direcciones, altas,bajas,altura , retroceso)</string>
+    <string name="snfugas">Sin Fugas</string>
+    <string name="chasissn">Chasis sin fractura</string>
+    <string name="cinturon">Estado de cinturon 3 puntos (ambos asientos)</string>
+    <string name="master">Master switch buen estado </string>
+    <string name="alarma">Alarma de retroceso </string>
+    <string name="gps">GPS (reporta ubicacion)</string>
+    <string name="intcabina">Interior de cabina en buen estado (tablareo , piso, asiento , tapiz)</string>
+    <string name="pinturaext">Pintura exterior-carroceria en buen estado (sin golpes , ni rayones , ni quebraduras)</string>
+    <string name="limpiezaint">Limpieza (piso , tablero , asiento , camarote)</string>
+
+    <string name="accesorios">Accesorios</string>
+    <string name="parlante">Parlantes</string>
+    <string name="canparlantes">Cantidad parlantes</string>
+    <string name="radio">Radio</string>
+    <string name="camarote">Camarote colchon buen estado</string>
+    <string name="tapizadogen">Tapizado general en buen estado (asiento, techo, puertas, piso)</string>
+    <string name="canradio">Cantidad Radio</string>
+    <string name="undcabezal">Cabezal</string>
+    <string name="undcisterna">Cisterna</string>
+    <string name="placacabezal">Placa</string>
+    <string name="chkvacio"></string>
+    <string name="eqpcalibracion">Tabla de calibracion</string>
+    <string name="docextintorcis">Extintor de 20 Libras 2</string>
+    <string name="eqpfecextintorcis">Fecha vencimiento extintor 2</string>
+    <string name="eqpcubeta">Cubeta de aluminio con conexion (cable con tenaza) polo tierra</string>
+    <string name="eqpembudo">Embudo de aluminio</string>
+    <string name="eqptigthfill">Tigtfill</string>
+    <string name="eqpconos">Conos</string>
+    <string name="eqpcanconos">Cantidad conos </string>
+    <string name="eqpmangueras">Mangueras de descarga en buen estado </string>
+    <string name="eqpcanmangueras">Cantidad mangueras de descarga </string>
+
+    <string name="estllantascis">llantas (grabado minimo 3mm)-Tuerca-Esparragos</string>
+    <string name="eestchacis">Chasis carroceria libre de fracturas o daños estructurales </string>
+    <string name="estgradacis">Estado de gradas de acceso/ apoya manos </string>
+    <string name="estlineascist">Lineas de seguridad o conexion al arnes </string>
+    <string name="estcintacist">Cinta antiderrapage </string>
+    <string name="estmanholeacis">Manholes / Cierre hermetico</string>
+    <string name="estloderascist">Guardafangos / Loderas</string>
+    <string name="estterminalescist">Terminales a conexion a tierra </string>
+    <string name="estlucescis">Estado de luces (frenos, direccionales, altas, bajas, altura, retroces, giro o vias)</string>
+    <string name="estconductorescis">Estado conductores electricos de luces / otros </string>
+    <string name="estmanguerascis">Estado de mangueras de Aire / sin fugas </string>
+    <string name="esttanquecist">Estado de tanque / abolladuras/ golpes </string>
+    <string name="btnagregar">Agregar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

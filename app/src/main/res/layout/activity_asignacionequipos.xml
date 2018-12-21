@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Asignacionequipos">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/pantallaasignacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtcabezal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:editable="false"
+                    android:hint="@string/undcabezal" />
+
+                <Button
+                    android:id="@+id/btncabezaln"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/undcabezal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtcabezalplaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:editable="false"
+                    android:hint="@string/placacabezal" />
+
+                <Button
+                    android:id="@+id/btncabezalplaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/undcabezal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/doc"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chcabezaldocoperacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/docoperacion"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/edtcabezalfecoperacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/fecoperacion"/>
+
+            <CheckBox
+                android:id="@+id/chcabezaldoclicencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doclicencia"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/ckcabezaldocrevision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/docrevision"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcabezalfecrevision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/fecrevision"/>
+
+            <View
+                android:id="@+id/dividerequiposq"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvequipos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <TextView
+                android:id="@+id/tvequiposd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/equi"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvequiposa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/dividerequipos"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chcabezalextintor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/extintor"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcabezalfecextintor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/fecextintor"/>
+
+            <EditText
+                android:id="@+id/edtcabezalextintor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/canextintor"
+                android:inputType="numberDecimal" />
+
+            <CheckBox
+                android:id="@+id/chcabezalpala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pala"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalabsorventes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/absorvente"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezaltacos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tacos"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalcunias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cunia"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalmartillo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/martillo"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezaljabonepoxy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Jabonepoxy"
+                android:textSize="18sp" />
+
+
+            <CheckBox
+                android:id="@+id/chcabezalcuniasegu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cuniaseguridad"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcabezalcuniaseg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/cuniaseguridad"
+                android:inputType="numberDecimal" />
+
+            <CheckBox
+                android:id="@+id/chcabezalbotiquin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/botiquin"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalfoco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/foco"
+                android:textSize="18sp" />
+
+
+            <View
+                android:id="@+id/divideestadogen"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvestgeneral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <TextView
+                android:id="@+id/tvestgenerald"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estadogeneral"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvestgenerala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/divideestadogend"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chcabezalllantas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/llantas"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalluces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Luces"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalsnfugas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/snfugas"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalchasissn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chasissn"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalcinturon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cinturon"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalmaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/master"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chalarma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarma"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalgps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gps"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalintcabina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/intcabina"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezalpinturaext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pinturaext"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezallimpiezaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/limpiezaint"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divideaccesoriosa"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvacessorios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <TextView
+                android:id="@+id/tvaccesoriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/accesorios"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvacessorioala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/divideaccesoriosd"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chcabezalparlante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parlante"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcabezalparlante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/canparlantes"
+                android:inputType="numberDecimal" />
+
+            <CheckBox
+                android:id="@+id/chcabezalradio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcabezalradio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/canradio"
+                android:inputType="numberDecimal" />
+
+            <CheckBox
+                android:id="@+id/chcabezalcamarote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/camarote"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcabezaltapizadogen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tapizadogen"
+                android:textSize="18sp" />
+
+
+            <View
+                android:id="@+id/dividercisternaq"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvcisterna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <TextView
+                android:id="@+id/tvcisternad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/undcisterna"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvcisternaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/dividercisterna"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtcisterna"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:editable="false"
+                    android:hint="@string/undcisterna" />
+
+                <Button
+                    android:id="@+id/btncisternan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/undcisterna" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtcisternaplaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:editable="false"
+                    android:hint="@string/placacabezal" />
+
+                <Button
+                    android:id="@+id/btncisternaplaca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="@string/undcisterna" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvdoccisterna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/doc"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvdocciesterna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/dividerdoccisterna"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chdocoperacioncisterna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/docoperacion"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/edtfecoperacioncisterna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/fecoperacion"/>
+
+
+
+            <CheckBox
+                android:id="@+id/ckdocrevisioncisterna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/docrevision"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtfecrevisioncisterna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/fecrevision"/>
+
+
+            <CheckBox
+                android:id="@+id/chciscalibrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eqpcalibracion"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/dividerequiposqcis"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvequiposcis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <TextView
+                android:id="@+id/tvequiposdcis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/equi"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvequiposacis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/dividerequiposcis"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chcisextintor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/docextintorcis"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcisfecextintorcisone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/fecextintor"/>
+
+            <EditText
+                android:id="@+id/edtcisfecextintorcistwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:hint="@string/eqpfecextintorcis"/>
+
+
+
+            <CheckBox
+                android:id="@+id/chciscubeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eqpcubeta"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcisembudo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eqpembudo"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcistigfill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eqptigthfill"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcisconos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eqpconos"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/edtcisconos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/eqpcanconos"
+                android:inputType="numberDecimal" />
+
+            <CheckBox
+                android:id="@+id/chcismangueras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eqpmangueras"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edtcismangueras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/eqpcanmangueras"
+                android:inputType="numberDecimal" />
+
+            <View
+                android:id="@+id/divideestadogencis"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvestgeneralcis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <TextView
+                android:id="@+id/tvestgeneraldcis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estadogeneral"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvestgeneralacis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:text="@string/doc" />
+
+            <View
+                android:id="@+id/divideestadogendcis"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:visibility="visible" />
+
+            <CheckBox
+                android:id="@+id/chcisllantas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estllantascis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcischasis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/eestchacis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcisgrada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estgradacis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcislineas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estlineascist"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chciscinta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estcintacist"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcismanhole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estmanholeacis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcislodera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estloderascist"
+                android:textSize="18sp" />
+
+
+
+            <CheckBox
+                android:id="@+id/chcisterminal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estterminalescist"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcisluces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estlucescis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chciscondcutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estconductorescis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcismanguera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estmanguerascis"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chcitanque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/esttanquecist"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnagregar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btnagregar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
