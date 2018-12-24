@@ -5,18 +5,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -30,8 +29,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.net.ssl.HttpsURLConnection;
+import java.util.ArrayList;
 
 
 /**
@@ -53,6 +51,8 @@ public class AsignarEquiposFragment extends Fragment {
     private String mParam2;
 
     private RequestQueue queue ;
+    private ListView listaequipos ;
+    private ArrayList<String> Listadoequipos ;
 
     private OnFragmentInteractionListener mListener;
 
@@ -95,6 +95,8 @@ public class AsignarEquiposFragment extends Fragment {
 
       //  return inflater.inflate(R.layout.fragment_asignar_equipos, container, false);
         View vista = inflater.inflate(R.layout.fragment_asignar_equipos, container, false);
+        listaequipos = (ListView) vista.findViewById(R.id.listaequipos) ;
+
         queue = Volley.newRequestQueue(getContext() ) ;
         getdata() ;
       //  obtenerdatosvolley();
@@ -127,6 +129,8 @@ public class AsignarEquiposFragment extends Fragment {
 
     public void getdata()  {
        // String sql = "131.161.52.171:3001/mecanicoss/";
+        ArrayList<String> Equipos = new ArrayList<String>();
+
         String sql = "http://131.161.52.171:3001/api/Salestables/";
         StrictMode.ThreadPolicy policy  = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -158,10 +162,14 @@ public class AsignarEquiposFragment extends Fragment {
 
                 JSONObject jsonobj = jsonarray.getJSONObject(i);
              //   Log.d(null, "SALIDA: " , jsonobj.optString("Cabezal"));
+             //   Cargarequipos( jsonobj.optString("Cabezal") );
+                Equipos.add(jsonobj.optString("Cabezal") );
                 Toast.makeText(getContext() ,"response" +jsonobj.optString("Cabezal"), Toast.LENGTH_SHORT).show();
 
             }
-
+            Listadoequipos = Equipos ;
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext() , android.R.layout.simple_list_item_1 ,Listadoequipos );
+            listaequipos.setAdapter(adapter);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -174,7 +182,19 @@ public class AsignarEquiposFragment extends Fragment {
 
     }
 
+    private void Cargarequipos(String cabezal)
+    {
+        Listadoequipos = Listarequipos(cabezal);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext() , android.R.layout.simple_list_item_1 ,Listadoequipos );
+        listaequipos.setAdapter(adapter);
 
+    }
+
+    private ArrayList<String> Listarequipos(String cabezal){
+        ArrayList<String> Equipos = new ArrayList<String>();
+        Equipos.add(cabezal);
+        return Equipos ;
+    }
 
     private void obtenerdatosvolley()
     {
