@@ -1,5 +1,6 @@
 package com.example.alvinramirez.myapptest;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -30,6 +32,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -98,6 +102,7 @@ public class AsignarEquiposFragment extends Fragment {
         listaequipos = (ListView) vista.findViewById(R.id.listaequipos) ;
 
         queue = Volley.newRequestQueue(getContext() ) ;
+        consumirserviciopost();
         getdata() ;
       //  obtenerdatosvolley();
         return vista ;
@@ -164,7 +169,7 @@ public class AsignarEquiposFragment extends Fragment {
              //   Log.d(null, "SALIDA: " , jsonobj.optString("Cabezal"));
              //   Cargarequipos( jsonobj.optString("Cabezal") );
                 Equipos.add(jsonobj.optString("Cabezal") );
-                Toast.makeText(getContext() ,"response" +jsonobj.optString("Cabezal"), Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(getContext() ,"response" +jsonobj.optString("Cabezal"), Toast.LENGTH_SHORT).show();
 
             }
             Listadoequipos = Equipos ;
@@ -180,6 +185,35 @@ public class AsignarEquiposFragment extends Fragment {
         }
 
 
+    }
+
+    private void consumirserviciopost()
+    {
+        String url = "http://131.161.52.171:3001/api/Salestables/";
+        StringRequest postrequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", "10");
+                params.put("Cabezal", "ritchie");
+                Toast.makeText(getContext() ,"response" +params, Toast.LENGTH_SHORT).show();
+
+                return params;
+            }
+
+        };
+
+        queue.add(postrequest);
     }
 
     private void Cargarequipos(String cabezal)

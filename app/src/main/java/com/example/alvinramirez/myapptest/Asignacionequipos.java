@@ -15,15 +15,22 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.util.Calendar;
-  // import android.support.v4.app.FragmentManager ;
+import java.util.HashMap;
+import java.util.Map;
+// import android.support.v4.app.FragmentManager ;
 
 public class Asignacionequipos extends AppCompatActivity {
 
-
+    private RequestQueue queue ;
     private DatePickerDialog.OnDateSetListener sDateSetListner ;
     private DatePickerDialog.OnDateSetListener sDateSetListnerhasta ;
     private DatePickerDialog.OnDateSetListener sDateSetListnerfecextintor ;
@@ -134,6 +141,7 @@ public class Asignacionequipos extends AppCompatActivity {
         edtcismangueras = (EditText) findViewById(R.id.edtcismangueras) ;
 
 
+
         btnagregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,6 +152,7 @@ public class Asignacionequipos extends AppCompatActivity {
 
             edtcabezal.setText(str);
 
+                consumirserviciopostd();
 
             }
         });
@@ -584,6 +593,9 @@ public class Asignacionequipos extends AppCompatActivity {
 
     }
 
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
@@ -644,5 +656,36 @@ public class Asignacionequipos extends AppCompatActivity {
 
 
     }
+
+
+    private void consumirserviciopostd()
+    {
+        String url = "http://131.161.52.171:3001/api/Salestables/";
+        StringRequest postrequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", "10");
+                params.put("Cabezal", "ritchie");
+            //    Toast.makeText(getContext() ,"response" +params, Toast.LENGTH_SHORT).show();
+
+                return params;
+            }
+
+        };
+
+        queue.add(postrequest);
+    }
+
 
 }
