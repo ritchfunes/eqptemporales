@@ -3,7 +3,9 @@ package com.example.alvinramirez.myapptest;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,15 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 
 /**
@@ -85,7 +96,8 @@ public class AsignarEquiposFragment extends Fragment {
       //  return inflater.inflate(R.layout.fragment_asignar_equipos, container, false);
         View vista = inflater.inflate(R.layout.fragment_asignar_equipos, container, false);
         queue = Volley.newRequestQueue(getContext() ) ;
-        obtenerdatosvolley();
+        getdata() ;
+      //  obtenerdatosvolley();
         return vista ;
     }
 
@@ -113,27 +125,74 @@ public class AsignarEquiposFragment extends Fragment {
         mListener = null;
     }
 
+    public void getdata()  {
+       // String sql = "131.161.52.171:3001/mecanicoss/";
+        String sql = "http://131.161.52.171:3001/api/Salestables/";
+        StrictMode.ThreadPolicy policy  = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        URL url = null ;
+        HttpURLConnection con  ;
+
+        try {
+            url = new URL(sql) ;
+            con = (HttpURLConnection) url.openConnection() ;
+            con.setRequestMethod("GET");
+            con.connect();
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputline ;
+            StringBuffer response = new StringBuffer();
+            String json = "" ;
+
+            while( (inputline = in.readLine() )!= null ){
+                response.append(inputline);
+
+            }
+
+            json = response.toString() ;
+            JSONArray jsonarray = null ;
+            jsonarray = new JSONArray(json) ;
+
+            for(int i = 0 ; i < jsonarray.length() ; i++)
+            {
+
+                JSONObject jsonobj = jsonarray.getJSONObject(i);
+             //   Log.d(null, "SALIDA: " , jsonobj.optString("Cabezal"));
+                Toast.makeText(getContext() ,"response" +jsonobj.optString("Cabezal"), Toast.LENGTH_SHORT).show();
+
+            }
+
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
 
     private void obtenerdatosvolley()
     {
+
       //  String url = "https://api.androidhive.info/contacts/" ;
-        String url = "131.161.52.171:3000/api/Salestables/" ;
-        final JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+      //  String url = "http://131.161.52.171:3001/mecanicoss/" ;
+          String url = "http://131.161.52.171:3001/api/Salestables/" ;
+
+       /*  JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
           //      JSONObject myjsonobject = response.getJSONObject(0);
-                try {
-                    JSONObject myjsonobject = response.getJSONObject(0);
-                    String Cabezal = myjsonobject.getString("Cabezal");
-                 //   String Cabezal = response.getString(0);
-                   String id = "3"; // response.getString(1);
-                    Toast.makeText(getContext() ,"response" +response + Cabezal +id , Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(getContext() ,"response" +response.toString(), Toast.LENGTH_SHORT).show();
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+
             }
         } , new ErrorListener() {
             @Override
@@ -141,42 +200,37 @@ public class AsignarEquiposFragment extends Fragment {
 
             }
         })  ;
-      //  final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-        //    @Override
-       //     public void onResponse(JSONObject response) {
+        */
+        final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
 
 
-        //        try {
-                //   JSONArray myjsonarray = response.getJSONArray();
+                try {
 
-      //            JSONArray myjsonarray = response.getJSONArray("")  ;
-                 //  JSONArray jsonte ;
-                //    for(int i = 0 ; i < myjsonarray.length(); i++) {
-                     //   JSONObject myjsonobject = response.getJSONObject(i) ;
-            //                         JSONObject myjsonobject = myjsonarray.getJSONObject(0);
-                     //   String name = myjsonobject.getString("name");
-                     //   String name = myjsonobject.getString("Cabezal");
-           //             String Cabezal = response.getString("Cabezal");
-            //            Toast.makeText(getContext() ,response + Cabezal , Toast.LENGTH_SHORT).show();
+                 JSONArray myjsonarray = response.getJSONArray("")  ;
+                    for(int i = 0 ; i < myjsonarray.length(); i++) {
+                                   JSONObject myjsonobject = myjsonarray.getJSONObject(i);
+                        String Cabezal = myjsonobject.getString("Cabezal");
+                     Toast.makeText(getContext() ,response + Cabezal , Toast.LENGTH_SHORT).show();
 
-                 //   }
+                   }
 
-           //     } catch (  JSONException e) {
-           //         e.printStackTrace();
-           //         Toast.makeText(getContext() ,response +  e.toString() , Toast.LENGTH_SHORT).show();
+               } catch (  JSONException e) {
+                    e.printStackTrace();
+               //    Toast.makeText(getContext() , response + name, Toast.LENGTH_SHORT).show();
 
 
-           //     }
-
-        //    }
-     //   } , new Response.ErrorListener(){
+                }
+                }
+        } , new Response.ErrorListener(){
 //
-    //        @Override
-      //      public void onErrorResponse(VolleyError error) {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-      //      }
-     //   });
-     //   Toast.makeText(getContext() , "response"+ "response" , Toast.LENGTH_SHORT).show();
+            }
+        });
+     //   Toast.makeText(getContext() , "response"+ request , Toast.LENGTH_SHORT).show();
 
         queue.add(request);
 
